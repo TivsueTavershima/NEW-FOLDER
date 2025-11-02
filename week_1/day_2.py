@@ -1,47 +1,32 @@
+print('')
+import random
+import sys
+from enum import Enum
+class RPS(Enum):
+      ROCK = 1
+      PAPER =2
+      SCISSORS = 3
 
-#function
+playerchoice = input('1.rock, \n2.paper,\n3.scissors\nplease make your chioce: ')
 
-def sum(sum1,sum2):
-   return sum1 + sum2
+player = int(playerchoice)
+
+if playerchoice < '1' or playerchoice > '3':
+  sys.exit('you must enter 1,2,or 3')
   
-  
-total = sum(2,5)
-print(total)
+computerchoice = random.choice("123")
+computer = int(computerchoice)
 
-def multiple(args):
-  
-     print(args)
-     print(type(multiple))
-    
-multiple("hello david samuel")
+print('you chose: '+ str(RPS(player)).replace('RPS','') +',')
+print('Taver chose: '+ str(RPS(computer)).replace('RPS','') +',')
 
-
-
-while value  <= 10:    
-   print(value)
-   if value == 5:
-     break
-   value =+  1
-  
- #  while loop
-  
-while value  <= 10: 
-   value += 1   
-   if value == 5:     continue
-   print(value)
+if player == 1 and computer == 3:
+  print('you win!')
+elif player == 2 and computer == 1:
+  print('you win!')
+elif player == 3 and computer == 2:
+  print('you win!')
+elif player == computer:
+  print('Tie game!')
 else:
-  print("the value is equal" + str(value))
-
- #for loop
-
-names = ['dave', 'samuel','danny']
-for name in names:
- print(name)
-
-for name in "Mississipi":
-  print(name)
-for names in range(3):
-  print(names)
-  
-for x in range(2,100,2):
-  print(x)
+  print('Taver wins!')
